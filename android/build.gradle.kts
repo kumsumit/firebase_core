@@ -18,7 +18,7 @@ fun getRootOrProjectExt(name: String): Any {
         projectExtra.has(name) -> projectExtra[name]
         project.hasProperty(name) -> project.property(name)
         else -> error("Property '$name' not found")
-    }
+    } ?: error("Property '$name' is null")
 }
 
 val rootCompileSdk = getRootOrProjectExt("compileSdk").toString().toInt()
