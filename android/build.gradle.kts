@@ -36,7 +36,7 @@ extensions.configure<LibraryExtension> {
 
     defaultConfig {
         minSdk = rootMinSdk
-        targetSdk = rootTargetSdk
+        targetSdkVersion(rootTargetSdk)
 
         testInstrumentationRunner =
             "androidx.test.runner.AndroidJUnitRunner"
