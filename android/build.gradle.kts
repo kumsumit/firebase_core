@@ -9,9 +9,21 @@ plugins {
 
 apply(from = "local-config.gradle.kts")
 
-val rootCompileSdk = rootProject.extra["compileSdk"] as Int
-val rootMinSdk = rootProject.extra["minSdk"] as Int
-val rootJavaVersion = rootProject.extra["javaVersion"] as JavaVersion
+fun getRootOrProjectExt(name: String): Any {
+    val rootExtra = rootProject.extensions.extraProperties
+    val projectExtra = project.extensions.extraProperties
+
+    return when {
+        rootExtra.has(name) -> rootExtra[name]
+        projectExtra.has(name) -> projectExtra[name]
+        project.hasProperty(name) -> project.property(name)
+        else -> error("Property '$name' not found")
+    }
+}
+
+val rootCompileSdk = getRootOrProjectExt("compileSdk").toString().toInt()
+val rootMinSdk = getRootOrProjectExt("minSdk").toString().toInt()
+val rootJavaVersion = JavaVersion.toVersion(getRootOrProjectExt("javaVersion"))
 
 fun getRootProjectExtOrDefaultProperty(name: String): String {
     val extra = rootProject.extensions.extraProperties
