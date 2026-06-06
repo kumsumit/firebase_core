@@ -79,4 +79,4 @@ dependencies {
     implementation("androidx.annotation:annotation:1.7.0")
 }
 
-apply(from = "user-agent.gradle")
+apply(from = "user-agent.gradle.kts")
