@@ -11,7 +11,6 @@ apply(from = "local-config.gradle.kts")
 
 val rootCompileSdk = rootProject.extra["compileSdk"] as Int
 val rootMinSdk = rootProject.extra["minSdk"] as Int
-val rootTargetSdk = rootProject.extra["targetSdk"] as Int
 val rootJavaVersion = rootProject.extra["javaVersion"] as JavaVersion
 
 fun getRootProjectExtOrDefaultProperty(name: String): String {
@@ -36,7 +35,6 @@ extensions.configure<LibraryExtension> {
 
     defaultConfig {
         minSdk = rootMinSdk
-        targetSdkVersion(rootTargetSdk)
 
         testInstrumentationRunner =
             "androidx.test.runner.AndroidJUnitRunner"
