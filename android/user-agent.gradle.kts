@@ -1,3 +1,4 @@
+import com.android.build.api.dsl.LibraryExtension
 import java.io.File
 
 val libraryName = "flutter-fire-core"
@@ -17,7 +18,7 @@ val libraryVersionName = run {
     }
 }
 
-android {
+extensions.configure<LibraryExtension> {
     defaultConfig {
         buildConfigField(
             "String",

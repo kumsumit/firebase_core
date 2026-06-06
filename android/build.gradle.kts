@@ -1,3 +1,5 @@
+import com.android.build.api.dsl.LibraryExtension
+
 group = "io.flutter.plugins.firebase.core"
 version = "1.0-SNAPSHOT"
 
@@ -7,10 +9,10 @@ plugins {
 
 apply(from = "local-config.gradle.kts")
 
-val compileSdk: Int by rootProject.extra
-val minSdk: Int by rootProject.extra
-val targetSdk: Int by rootProject.extra
-val javaVersion: JavaVersion by rootProject.extra
+val rootCompileSdk = rootProject.extra["compileSdk"] as Int
+val rootMinSdk = rootProject.extra["minSdk"] as Int
+val rootTargetSdk = rootProject.extra["targetSdk"] as Int
+val rootJavaVersion = rootProject.extra["javaVersion"] as JavaVersion
 
 fun getRootProjectExtOrDefaultProperty(name: String): String {
     val extra = rootProject.extensions.extraProperties
@@ -27,22 +29,22 @@ fun getRootProjectExtOrDefaultProperty(name: String): String {
         ?: error("Property '$name' not found")
 }
 
-android {
+extensions.configure<LibraryExtension> {
     namespace = "io.flutter.plugins.firebase.core"
 
-    compileSdk = compileSdk
+    compileSdk = rootCompileSdk
 
     defaultConfig {
-        minSdk = minSdk
-        targetSdk = targetSdk
+        minSdk = rootMinSdk
+        targetSdk = rootTargetSdk
 
         testInstrumentationRunner =
             "androidx.test.runner.AndroidJUnitRunner"
     }
 
     compileOptions {
-        sourceCompatibility = javaVersion
-        targetCompatibility = javaVersion
+        sourceCompatibility = rootJavaVersion
+        targetCompatibility = rootJavaVersion
     }
 
     buildFeatures {
