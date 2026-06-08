@@ -105,13 +105,13 @@
     },
     {
       "name": "firebase_core_platform_interface",
-      "rootUri": "file:///Users/amitsharan/.pub-cache/git/firebase_core_platform_interface-51a085b039b042fdd101779e759a192ab8088d7e/",
+      "rootUri": "file:///Users/amitsharan/.pub-cache/git/firebase_core_platform_interface-df6c156996ee80474d4fc40a236c31f1df79db0b/",
       "packageUri": "lib/",
       "languageVersion": "3.12"
     },
     {
       "name": "firebase_core_web",
-      "rootUri": "file:///Users/amitsharan/.pub-cache/git/firebase_core_web-784cc2fa5949c682c279d2c6b8e2dd684c1e5207/",
+      "rootUri": "file:///Users/amitsharan/.pub-cache/git/firebase_core_web-be3b01f71dcb1e020794382a112cad10f991c970/",
       "packageUri": "lib/",
       "languageVersion": "3.12"
     },

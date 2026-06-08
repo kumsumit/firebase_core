@@ -142,7 +142,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "51a085b039b042fdd101779e759a192ab8088d7e"
+      resolved-ref: df6c156996ee80474d4fc40a236c31f1df79db0b
       url: "https://github.com/kumsumit/firebase_core_platform_interface.git"
     source: git
     version: "7.0.1"
@@ -151,7 +151,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "784cc2fa5949c682c279d2c6b8e2dd684c1e5207"
+      resolved-ref: be3b01f71dcb1e020794382a112cad10f991c970
       url: "https://github.com/kumsumit/firebase_core_web.git"
     source: git
     version: "3.8.0"
